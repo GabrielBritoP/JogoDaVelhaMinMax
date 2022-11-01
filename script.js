@@ -2,7 +2,7 @@ import Board from './classes/board.js';
 import Jogador from './classes/jogador.js';
 import {addClass, drawWinningLine, hasClass} from './helpers.js';
 
-function newGame(profundidade = 3, startingJogador = 1) {
+function newGame(profundidade = -1, startingJogador = 1) {
     console.log(profundidade)
     const jogador = new Jogador(parseInt(profundidade));
     const board = new Board(['', '', '', '', '', '', '', '', '']);
@@ -72,6 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("newGame").addEventListener('click', () => {
         const startingDIV = document.getElementById("starting");
         const starting = startingDIV.options[startingDIV.selectedIndex].value;
-        newGame(3, starting);
+        newGame(-1, starting);
     });
 });
