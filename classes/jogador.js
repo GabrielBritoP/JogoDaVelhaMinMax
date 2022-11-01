@@ -46,7 +46,7 @@ export default class Jogador {
                 } else {
                     returnValue = this.nodesMap.get(best);
                 }
-                //run a callback after calculation and return the index
+
                 callback(returnValue);
                 return returnValue;
             }
@@ -57,17 +57,17 @@ export default class Jogador {
         if (!maximizing) {
 
             let best = 100;
-            //Loop through all empty cells
+
             board.getAvailableMoves().forEach(index => {
-                //Initialize a new board with a copy of our current state
+
                 const child = new Board([...board.state]);
 
-                //Create a child node by inserting the minimizing symbol o into the current empty cell
+
                 child.insert('o', index);
 
-                //Recursively calling getMelhorMovimento this time with the new board and maximizing turn and incrementing the profundidade
+
                 let nodeValue = this.getMelhorMovimento(child, true, callback, profundidade + 1);
-                //Updating best value
+
                 best = Math.min(best, nodeValue);
 
                 if (profundidade == 0) {
