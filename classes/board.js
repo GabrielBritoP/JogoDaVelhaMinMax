@@ -14,6 +14,7 @@ class Board {
     }
 
     insert(symbol, position) {
+
         if(this.state[position]) {
             return false;
         }
@@ -31,34 +32,34 @@ class Board {
 
     isTerminal() {
         if(this.isEmpty()) return false;
-        //horizontal ganha
+        // Horizontal ganha
         if(this.state[0] === this.state[1] && this.state[0] === this.state[2] && this.state[0]) {
-            return {'vencedor': this.state[0], 'direcao': 'H', 'row': 1};
+            return {'vencedor': this.state[0], 'direction': 'H', 'row': 1};
         }
         if(this.state[3] === this.state[4] && this.state[3] === this.state[5] && this.state[3]) {
-            return {'vencedor': this.state[3], 'direcao': 'H', 'row': 2};
+            return {'vencedor': this.state[3], 'direction': 'H', 'row': 2};
         }
         if(this.state[6] === this.state[7] && this.state[6] === this.state[8] && this.state[6]) {
-            return {'vencedor': this.state[6], 'direcao': 'H', 'row': 3};
+            return {'vencedor': this.state[6], 'direction': 'H', 'row': 3};
         }
 
-      //vertical ganha
+        // Vertical ganha
         if(this.state[0] === this.state[3] && this.state[0] === this.state[6] && this.state[0]) {
-            return {'vencedor': this.state[0], 'direcao': 'V', 'column': 1};
+            return {'vencedor': this.state[0], 'direction': 'V', 'column': 1};
         }
         if(this.state[1] === this.state[4] && this.state[1] === this.state[7] && this.state[1]) {
-            return {'vencedor': this.state[1], 'direcao': 'V', 'column': 2};
+            return {'vencedor': this.state[1], 'direction': 'V', 'column': 2};
         }
         if(this.state[2] === this.state[5] && this.state[2] === this.state[8] && this.state[2]) {
-            return {'vencedor': this.state[2], 'direcao': 'V', 'column': 3};
+            return {'vencedor': this.state[2], 'direction': 'V', 'column': 3};
         }
 
-        //diagonal ganha
+        // Diagonal ganha
         if(this.state[0] === this.state[4] && this.state[0] === this.state[8] && this.state[0]) {
-            return {'vencedor': this.state[0], 'direcao': 'D', 'diagonal': 'main'};
+            return {'vencedor': this.state[0], 'direction': 'D', 'diagonal': 'main'};
         }
         if(this.state[2] === this.state[4] && this.state[2] === this.state[6] && this.state[2]) {
-            return {'vencedor': this.state[2], 'direcao': 'D', 'diagonal': 'counter'};
+            return {'vencedor': this.state[2], 'direction': 'D', 'diagonal': 'counter'};
         }
 
 

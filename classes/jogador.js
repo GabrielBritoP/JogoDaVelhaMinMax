@@ -6,7 +6,7 @@ export default class Jogador {
         this.nodesMap = new Map();
     }
 
-    getMelhorMovimento(board, maximizing = true, callback = () => {
+    getMelhorMovimento(board, maximizando = true, callback = () => {
     }, profundidade = 0) {
 
         if (profundidade == 0) this.nodesMap.clear();
@@ -20,7 +20,7 @@ export default class Jogador {
             return 0;
         }
         //Maximizando alpha
-        if (maximizing) {
+        if (maximizando) {
 
             let best = -100;
 
@@ -54,7 +54,7 @@ export default class Jogador {
             return best;
         }
         //Minimizando Beta
-        if (!maximizing) {
+        if (!maximizando) {
 
             let best = 100;
 
