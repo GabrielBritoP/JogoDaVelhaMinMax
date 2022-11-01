@@ -49,7 +49,7 @@ function newGame(profundidade = 3, startingJogador = 1) {
             if (board.isTerminal()) {
                 drawWinningLine(board.isTerminal());
             }
-            jogadorTurn = 0;
+            jogadorTurn = 0; //Switch turns
 
             jogador.getMelhorMovimento(board, !maximizando, best => {
                 const symbol = !maximizando ? 'x' : 'o';
